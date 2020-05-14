@@ -176,9 +176,22 @@ console.log(appleIndex(["orange", "grape", "mango", "banana", "apple"]));
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
  */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(fruit) {
+  console.log("Array length: " + fruit.length);
+  console.log(fruit);
+  for (let i = 0; i < fruit.length; i++) {
+    if (fruit[i] === "apple") {
+      fruit[i] = true;
+    } else {
+      fruit[i] = false;
+    }
+  }
+  return fruit;
 }
+
+console.log(
+  isItAnApple(["orange", "apple", "banana", "strawberry", "apple", "mango"])
+);
 
 // ⭐️ Example Test Data ⭐️
 
@@ -208,14 +221,14 @@ var inventory = [
  * ### Example Array Challenge:
  *
  * @instructions
- * get3rdCar() should return the string `The is a Land Rover Defender Ice Edition`
+ * get3rdCar() should return the string `This is a Land Rover Defender Ice Edition`
  *
  *
  * NOTE: This example has been completed for you.
  **/
 function get3rdCar(inventory) {
   const the3rd = inventory[2];
-  return `The is a ${the3rd.car_make} ${the3rd.car_model}`;
+  return `This is a ${the3rd.car_make} ${the3rd.car_model}`;
 }
 
 // 👇 COMPLETE YOUR WORK BELOW 👇
@@ -235,8 +248,13 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
  */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  console.log(inventory[index]);
+  const car_make = inventory[index].car_make;
+  const car_model = inventory[index].car_model;
+  console.log(`This is a ${car_make} ${car_model}`);
 }
+
+getCarInfoByIndex(inventory, 0);
 
 /**
  * ### Challenge `getLastCarInfo`
