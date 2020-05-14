@@ -215,6 +215,7 @@ var inventory = [
   { id: 12, car_make: "Lotus", car_model: "Esprit", car_year: 2004 },
   { id: 13, car_make: "Chevrolet", car_model: "Cavalier", car_year: 1997 },
   { id: 14, car_make: "Dodge", car_model: "Ram Van 1500", car_year: 1999 },
+  { id: 15, car_make: "Nissan", car_model: "Rogue", car_year: 2008 },
 ];
 
 /**
@@ -248,7 +249,6 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
  */
 function getCarInfoByIndex(inventory, index) {
-  console.log(inventory[index]);
   const car_make = inventory[index].car_make;
   const car_model = inventory[index].car_model;
   console.log(`This is a ${car_make} ${car_model}`);
@@ -267,9 +267,13 @@ getCarInfoByIndex(inventory, 0);
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
  */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(inventory) {
+  const car_make = inventory[inventory.length - 1].car_make;
+  const car_model = inventory[inventory.length - 1].car_model;
+  console.log(`This is a ${car_make} ${car_model}`);
 }
+
+getLastCarInfo(inventory);
 
 /**
  * ### Challenge `getModelYears`
